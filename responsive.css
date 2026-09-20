@@ -1,0 +1,45 @@
+/* Responsive layout: desktop keeps the dossier composition; compact screens prioritize readable controls. */
+html{overflow-x:hidden}
+body{min-width:0!important}
+.shell{width:min(1170px,calc(100% - 48px))}
+
+@media (max-width:1100px){
+  .top{padding:0 28px}.shell{width:calc(100% - 40px);margin:24px auto}
+  .screen{min-height:0}.left,.right,.jobleft,.jobright{padding:34px 32px}
+  .steps{gap:12px;flex-wrap:wrap}.steps span{font-size:11px}
+  .profile-grid{gap:0 10px}
+  .identity-layout{grid-template-columns:.82fr 1.14fr .86fr!important}
+  .summary-card-wrap{overflow-x:auto;padding-bottom:12px}
+}
+
+@media (max-width:760px){
+  body{background-size:16px 16px}
+  .top{height:auto;min-height:62px;padding:12px 16px;gap:12px;align-items:flex-start}.top>span{font-size:11px;white-space:nowrap;padding-top:4px}.brand b{font-size:16px;letter-spacing:1px}.brand small{font-size:8px;letter-spacing:1px}
+  .shell{width:calc(100% - 24px);margin:16px auto 28px}
+  .steps{justify-content:flex-start;flex-wrap:nowrap;gap:8px;overflow-x:auto;margin-bottom:14px;padding:2px 2px 8px;scrollbar-width:thin}.steps span{flex:0 0 auto;font-size:11px;white-space:nowrap}.steps b{width:24px;height:24px}
+  .screen{border-radius:10px;box-shadow:4px 5px #b2374218}.screen.on{display:block!important}.screen.two:not(.on){display:none!important}.left,.right,.jobleft,.jobright{padding:24px 18px}.portrait{display:none}.portrait.person{display:block;min-height:260px;order:-1}.portrait.person .avatar-halo{transform:scale(.55);transform-origin:center}.portrait.person .avatar-figure{transform:scale(.58);transform-origin:center}.portrait-age{bottom:18px}
+  h1{font-size:28px;line-height:1.25}h2{font-size:23px;line-height:1.3}p{font-size:13px;line-height:1.7}
+  .field{margin:13px 0}.field input,.field select,.search{font-size:16px;min-height:44px}.btn{font-size:15px;min-height:44px;padding:10px 15px}
+  .profile-grid{grid-template-columns:1fr}.modes{gap:6px}.modes button{font-size:13px;min-height:40px}
+  .dicegrid,.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stat span{font-size:24px}.records{height:auto;min-height:60px;flex-wrap:wrap}.insight-panel svg{width:100%;height:auto;max-height:250px}
+  .jobscroll{max-height:360px}.jobtable{min-width:520px}.jobleft{padding-bottom:18px}.jobright{padding-top:18px}.metrics{grid-template-columns:1fr;gap:8px}.metrics div{min-height:0}.chips span{font-size:12px}
+  #s6{padding:24px 18px 30px}.equipment-head{display:block;margin-bottom:14px}.asset-summary{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.weapon-controls{grid-template-columns:1fr!important}.weapon-controls .btn{grid-column:auto}.equipment-actions{align-items:flex-start;flex-direction:column}.equipment-table-wrap{margin:0 -3px}
+  .skill-points{grid-template-columns:1fr}.occupation-skill-setup,.skill-columns{grid-template-columns:1fr!important}.skill-save-line{align-items:flex-start;flex-direction:column}.custom-skill-form{grid-template-columns:1fr!important}.custom-skill-form .custom-occ,.custom-skill-form>button{grid-column:auto}.specialization-editor{grid-template-columns:62px minmax(0,1fr) 30px}.skill-table-column{overflow-x:auto}.skill-table-header,.skill-row{min-width:360px}
+  .summary-card-wrap{margin:0 -18px;overflow-x:auto;padding:0 12px 12px}.summary-card{min-width:760px!important;transform:none!important}.summary-controls{flex-wrap:wrap;gap:8px}.summary-controls .btn{margin-top:0}
+  .dossier-scene,.dossier-scene.dossier-only{width:100%!important;min-height:0!important;padding:18px!important;transform:none!important;margin:0!important;gap:16px}.dossier-scene.dossier-hub{display:grid!important;grid-template-columns:1fr!important;min-height:0!important}.dossier-intro,.dossier-creation,.import-teaser,.import-card{padding:18px!important;box-shadow:4px 5px #b2374218}.dossier-intro h1,.dossier-creation h1{font-size:27px}.dossier-desk,.dossier-only .dossier-desk.compact{height:250px!important;min-height:250px!important;border-width:7px}.dossier-desk:before,.dossier-desk:after{display:none}.dossier-bag{top:45px!important;width:190px;height:125px}.dossier-bag i{left:57px;width:70px}.dossier-bag b{font-size:18px}.character-import textarea,.import-card .character-import textarea{height:140px}.import-actions{align-items:stretch;flex-direction:column}.import-actions .btn{margin:0;align-self:flex-start}
+  .crop-dialog{padding:12px}.crop-panel{width:100%;max-height:94vh;overflow:auto;padding:16px}.crop-pane:not([hidden]) canvas{width:min(100%,320px)!important;height:auto!important;max-width:100%!important;max-height:none!important}
+}
+
+@media (max-width:390px){
+  .top>span{display:none}.shell{width:calc(100% - 16px)}.left,.right,.jobleft,.jobright,#s6{padding-left:14px;padding-right:14px}.dicegrid,.stats{grid-template-columns:1fr}.asset-summary{grid-template-columns:1fr}.summary-card-wrap{margin-left:-14px;margin-right:-14px}.dossier-scene,.dossier-scene.dossier-only{padding:12px!important}.dossier-intro,.dossier-creation,.import-teaser,.import-card{padding:15px!important}
+}
+
+/* The printable A4 card keeps its exact proportions; phones can pan it instead of reading illegibly tiny text. */
+@media (max-width:760px){
+  #s7{padding:14px!important;overflow-x:auto!important}
+  #s7 .summary-actions,#s7 .summary-status{width:760px!important;max-width:none!important;margin-left:0!important}
+  #s7 .summary-actions{align-items:flex-start;flex-wrap:wrap}
+  #s7 .summary-actions>div{flex-wrap:wrap}
+  #s7 .summary-card{width:760px!important;min-width:760px!important;min-height:auto!important;transform:none!important;margin:0!important}
+}
+
